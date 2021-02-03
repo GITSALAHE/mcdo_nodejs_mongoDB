@@ -1,0 +1,40 @@
+$color: #ECC020;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('../Images/Cover.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    .buttons{
+        position: absolute;
+        top: 85%;
+        right: 100px;
+        width: 50%;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        a {
+            button{
+                background-color: $color;
+                border-radius: 10px;
+                width: 70px;
+                height: 40px;
+                margin-left: 5px;
+                cursor: pointer;
+                &:hover{
+                    background-color: rgb(250, 250, 250);
+                    color:$color;
+                }
+            }
+        }
+    }
+}
+
