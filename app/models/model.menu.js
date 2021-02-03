@@ -15,7 +15,8 @@ const Menu = new Schema(
       required: true,
       trim: true,
       minlenght: 3,
-    }
+    },
+   
   },
   {
     versionKey: false

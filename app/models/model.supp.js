@@ -15,6 +15,18 @@ const Supp = new Schema(
             required: true,
             trim: true,
             minlenght: 3,
+        },
+        prix: {
+            type: String,
+            required: true,
+            trim: true,
+            minlength: 1,
+        },
+        pointFid: {
+            type: String,
+            required: true,
+            trim: true,
+            minlength: 3,
         }
     },
     {

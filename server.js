@@ -42,7 +42,11 @@ const sousmenuRouter = require('./app/routes/routes.sousmenu')
 app.use('/sousmenu', sousmenuRouter);
 
 const suppRouter = require('./app/routes/routes.supp');
-app.use('/supp', suppRouter)
+app.use('/supp', suppRouter);
+
+const checkoutRouter = require('./app/routes/routes.checkout');
+app.use('/checkout', checkoutRouter);
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })

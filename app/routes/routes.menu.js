@@ -8,11 +8,16 @@ router.route("/").get((req, res) => {
 });
 
 router.route("/add").post((req, res) => {
+
+
+
   const nomMenu = req.body.nomMenu; 
   const imagePath  = req.body.imagePath;
+
   const menuPush = new Menu({
    nomMenu,
-   imagePath
+   imagePath,
+  
   });
 
   menuPush

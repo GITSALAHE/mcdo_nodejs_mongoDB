@@ -16,11 +16,24 @@ const SousMenu = new Schema(
             trim: true,
             minlenght: 3,
         },
+        
         idMenu: {
             type: String,
             required: true,
             trim: true,
-        }
+        },
+        prix:{
+            type:String,
+            required: true,
+            trim:true,
+            minlength:1,
+          },
+          pointFid:{
+            type:String,
+            required: true,
+            trim:true,
+            minlength:3,
+          }
     },
     {
         versionKey: false
