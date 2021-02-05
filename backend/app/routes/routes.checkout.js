@@ -12,9 +12,11 @@ router.route("/cc").post((req, res) => {
 });
 
 router.route("/table").post((req, res) => {
-      
-      var data = "Votre point de fidilte est: "+ 150;  
-      var fileName = 'qr'+uuid()+'.png';
+      if(req.body.q1 !== '' && req.body.point1 !== '' || req.body.q2 !== '' && req.body.point2 !== '' || req.body.q3 !== '' && req.body.point3){
+        var pointTotal  =  (req.body.q1 * req.body.point1) + (req.body.q2 * req.body.point2) + (req.body.q3 * req.body.point3);
+      } 
+      var data = "Votre point de fidilte est: "+ pointTotal;  
+      var fileName = './qrimage/qr'+uuid()+'.png';
       QRCode.toFile(fileName, data, function(err, file){
       var qrFile = path.join(__dirname, '../../'+fileName);
       res.sendFile(qrFile)
