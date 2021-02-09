@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="Stylesheet" href="../Style/Products.css">
+    <link rel="Stylesheet" href="../Style/Products.css" id="css">
     <title>Products</title>
 </head>
 
@@ -19,111 +19,79 @@
         </div>
         <div class="cover"></div>
         <div class="title">
-            <h2> Nos menus </h2>
+            <h2 id="menuTrans"> </h2>
         </div>
 
     </header>
     <div class="products">
-        <div class="product">
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-                <img src="../Images/menu.png" alt="back">
-                <p> Best Of* </p>
-            </button>
+        <div id="menus" class="products">
 
-        </div>
-        <div class="product">
-            <img src="../Images/menu.png" alt="back">
-            <p> Best Of* </p>
-        </div>
-        <div class="product">
-            <img src="../Images/menu.png" alt="back">
-            <p> Best Of* </p>
-        </div>
-
-        <div class="product">
-            <img src="../Images/menu.png" alt="back">
-            <p> Best Of* </p>
         </div>
 
 
-        <!-- Modal plats -->
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+
+
+        <!-- Modal Sousmenu -->
+        <div class="modal fade" id="sousmenu" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
+                <div class="modal-content modal-content-sousmenu">
+                    <input type="hidden" id="idMenu" value="">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Plats</h5>
+                        <h5 class="modal-title" id="sousMenuTrans"></h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="products">
-                        <div class="product">
-                            <input type="checkbox">
-                            <img src="../Images/menu.png" alt="back">
-                            <input type="number" value="1" class="number" min="1" max="20">
-                            <p> 45 DH</p>
-                        </div>
-                        <div class="product">
-                            <input type="checkbox">
-                            <img src="../Images/menu.png" alt="back">
-                            <input type="number" value="1" class="number" min="1" max="20">
-                            <p> 45 DH</p>
-                        </div>
-                        <div class="product">
-                            <input type="checkbox">
-                            <img src="../Images/menu.png" alt="back">
-                            <input type="number" value="1" class="number" min="1" max="20">
-                            <p> 45 DH</p>
-                        </div>
+                    <div class="products" id="sousmenus">
+                       
 
-                    </div>
-
-                    <div class="modal-footer justify-content-center">
-                        <button type="button" class="btn btn-primary" data-toggle="modal"
-                            data-target="#supp">Next</button>
                     </div>
                 </div>
             </div>
         </div>
 
+        <div class="modal fade" id="productmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content modal-content-product">
+                <input type="hidden" id="idSousMenu" value="">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="produitTrans"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="products" id="productsAppend">
+                   
+
+                </div>
+                <a name="" id="supplementButtonTrans" class="btn btn-primary" href="#supp" data-toggle="modal" role="button"></a>
+            </div>
+        </div>
+    </div>
+  
+      
         <!-- SUPP Modal Dessert -->
         <div class="modal fade " id="supp" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
             aria-hidden="true">
             <div class="modal-dialog supp modal-dialog-centered" role="document">
                 <div class="modal-content ">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Dessert</h5>
+                        <h5 class="modal-title" id="suppTitleTrans"></h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="products">
-                        <div class="product">
-                            <input type="checkbox">
-                            <img src="../Images/frittes.png" alt="back">
-                            <p> 45 DH</p>
-                            <input type="number" value="1" class="number" min="1" max="20">
-                        </div>
-                        <div class="product">
-                            <input type="checkbox">
-                            <img src="../Images/coca.png" alt="back">
-                            <p> 45 DH</p>
-                            <input type="number" value="1" class="number" min="1" max="20">
-                        </div>
-                        <div class="product">
-                            <input type="checkbox">
-                            <img src="../Images/mcflurry.png" alt="back">
-                            <p> 45 DH</p>
-                            <input type="number" value="1" class="number" min="1" max="20">
-                        </div>
+                    <div class="products" id="supplement">
+                       
+                      
 
                     </div>
                     <div class="modal-footer justify-content-center">
 
                         <button type="button" class="btn btn-primary" data-toggle="modal"
-                            data-target="#payment">Next</button>
+                            data-target="#ways" id="nextButtonTrans"></button>
                     </div>
                 </div>
             </div>
@@ -132,29 +100,92 @@
 
 
         <!-- payment Modal -->
-        <div class="modal fade " id="payment" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        <div class="modal fade " id="ways" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
             aria-hidden="true">
             <div class="modal-dialog payment supp modal-dialog-centered" role="document">
-                <div class="modal-content ">
+                <div class="modal-content " style="    HEIGHT: 500px;                ">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Méthode </h5>
+                        <h5 class="modal-title" id="methodShipTrans"> </h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="choices">
-                        <div class="choice1">
-                            <img src="../Images/eatIn.png" alt="back">
-                            <a href="">Eat In</a>
-                        </div>
                         <div class="choice2">
                             <img src="../Images/takeaway.png" alt="back">
-                            <a href="">Take away</a>
+                            <a href="#payment" class="waystopayment" data-toggle="modal" data-method="emporte" id="emporteTrans"></a>
                         </div>
+                        <div class="choice1">
+                            <img src="../Images/eatIn.png" alt="back">
+                            <a href="#payment" class="waystopayment" data-toggle="modal" data-method="atable" id="atableTrans"></a>
+                        </div>
+
+                    </div>
+                    <div>
+
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="modal fade " id="payment" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog payment supp modal-dialog-centered" role="document">
+            <div class="modal-content modal-content-payment" style="    height: 746px !important;">
+                <input type="hidden" id="method" value="">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="methodPayTrans"> </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <form method="post" id="payment-form"  onsubmit="event.preventDefault(); payment(); document.getElementById('ccpurchase').disabled = true">
+                                    <img src="../Images/credit-card.svg" style="width: 200px;" alt="back">
+                    <h3 style="color: #fff;" id="paymentTitleTrans"></h3>
+                                    <div class="form-group">
+                                      <label for="" style="color: #fff;" id="nomTrans"></label>
+                                      <input type="text" name="" id="nom" class="form-control" placeholder="" aria-describedby="helpId">
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="" style="color: #fff;" id="emailTrans"></label>
+                                      <input type="text" name="" id="email" class="form-control" placeholder="" aria-describedby="helpId">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="" style="color: #fff;" id="ccTrans"></label>
+                                            <div id="card-element" class="form-control"></div>
+                                        
+                                    </div>
+                                    <input type="submit" id="purchaseTrans" class="btn btn-success" value="">
+
+                                </form>
+                            </div>
+                            <div class="col">
+                                <img src="../Images/cash.png" style="width: 200px;" alt="back">
+                                <h3 style="color: #fff;" id="cashTrans"></h3>
+                                <div class="form-group">
+                                  <label style="color: #fff;" for="" id="nbTableTrans"></label>
+                                  <select class="form-control" name="" id="tableDispo">
+                                    
+                                  </select>
+                                </div>
+                                <input type="submit" id="btnCash" class="btn btn-success" value="">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <span style="color: #fff;" id="couponTrans">Coupon :</span>
+                    <input placeholder="Coupon" class="coupon" id="coupon" type="text" >
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
 
     <footer>
@@ -162,6 +193,7 @@
             <img src="../Images/logo.png" alt="logo">
         </div>
     </footer>
+    <script src="https://js.stripe.com/v3/"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -171,8 +203,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-
+      
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+<script src="../js/translator.js"></script>
     <script src="../js/axiosActions.js"></script>
 
 

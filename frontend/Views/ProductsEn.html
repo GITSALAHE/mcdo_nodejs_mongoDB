@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="Stylesheet" href="../Style/Products.css">
+    <title>Products</title>
+</head>
+
+<body>
+    <header>
+        <div class="menu">
+            <img src="../Images/logo.png" alt="logo">
+        </div>
+        <div class="cover"></div>
+        <div class="title">
+            <h2> Our Menus </h2>
+        </div>
+
+    </header>
+    <div class="products">
+        <div class="product">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                <img src="../Images/menu.png" alt="back">
+                <p> Best Of* </p>
+            </button>
+
+        </div>
+        <div class="product">
+            <img src="../Images/menu.png" alt="back">
+            <p> Best Of* </p>
+        </div>
+        <div class="product">
+            <img src="../Images/menu.png" alt="back">
+            <p> Best Of* </p>
+        </div>
+
+        <div class="product">
+            <img src="../Images/menu.png" alt="back">
+            <p> Best Of* </p>
+        </div>
+
+
+        <!-- Modal plats -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Meals</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="products">
+                        <div class="product">
+                            <input type="checkbox">
+                            <img src="../Images/menu.png" alt="back">
+                            <input type="number" value="1" class="number" min="1" max="20">
+                            <p> 45 DH</p>
+                        </div>
+                        <div class="product">
+                            <input type="checkbox">
+                            <img src="../Images/menu.png" alt="back">
+                            <input type="number" value="1" class="number" min="1" max="20">
+                            <p> 45 DH</p>
+                        </div>
+                        <div class="product">
+                            <input type="checkbox">
+                            <img src="../Images/menu.png" alt="back">
+                            <input type="number" value="1" class="number" min="1" max="20">
+                            <p> 45 DH</p>
+                        </div>
+
+                    </div>
+
+                    <div class="modal-footer justify-content-center">
+                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                            data-target="#supp">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SUPP Modal Dessert -->
+        <div class="modal fade " id="supp" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true">
+            <div class="modal-dialog supp modal-dialog-centered" role="document">
+                <div class="modal-content ">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Dessert</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="products">
+                        <div class="product">
+                            <input type="checkbox">
+                            <img src="../Images/frittes.png" alt="back">
+                            <p> 45 DH</p>
+                            <input type="number" value="1" class="number" min="1" max="20">
+                        </div>
+                        <div class="product">
+                            <input type="checkbox">
+                            <img src="../Images/coca.png" alt="back">
+                            <p> 45 DH</p>
+                            <input type="number" value="1" class="number" min="1" max="20">
+                        </div>
+                        <div class="product">
+                            <input type="checkbox">
+                            <img src="../Images/mcflurry.png" alt="back">
+                            <p> 45 DH</p>
+                            <input type="number" value="1" class="number" min="1" max="20">
+                        </div>
+
+                    </div>
+                    <div class="modal-footer justify-content-center">
+
+                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                            data-target="#payment">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- payment Modal -->
+        <div class="modal fade " id="payment" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true">
+            <div class="modal-dialog payment supp modal-dialog-centered" role="document">
+                <div class="modal-content ">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Payment </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="choices">
+                        
+                        <div class="choice2">
+                            <img src="../Images/takeaway.png" alt="back">
+                            <a href="">Eat In</a>
+                            <div class="infos">
+                                <form action="">
+                                <input placeholder="Name" type="text" name="" id="">
+                                <input placeholder="Phone" type="text">
+                                <input placeholder="Email" type="text">
+                                <input class="submit" type="submit" value="Submit">
+                            </form>
+                            </div>
+                            
+                        </div>
+                        <div class="choice2">
+                            <img src="../Images/takeaway.png" alt="back">
+                            <a href="">Take away</a>
+                        </div>
+                    </div>
+                    <div>
+
+                    </div>
+                    <div class="modal-footer justify-content-center" >
+                        <span>Coupon :</span>
+                    <input placeholder="Coupon" type="text">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="menu">
+            <img src="../Images/logo.png" alt="logo">
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script src="../js/axiosActions.js"></script>
+
+
+</body>
+
+</html>

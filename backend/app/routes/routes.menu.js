@@ -1,5 +1,8 @@
 const router = require("express").Router();
 let Menu = require("../models/model.menu");
+const util = require("util");
+const multer = require("multer");
+const maxSize = 2 * 1024 * 1024;
 
 router.route("/").get((req, res) => {
   Menu.find()
@@ -7,22 +10,117 @@ router.route("/").get((req, res) => {
     .catch((err) => res.status(400).json("Error :" + err));
 });
 
-router.route("/add").post((req, res) => {
+router.route("/add").post(async (req, res) => {
 
-
-
-  const nomMenu = req.body.nomMenu; 
-  const imagePath  = req.body.imagePath;
-
-  const menuPush = new Menu({
-   nomMenu,
-   imagePath,
-  
+  let storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+      // @ts-ignore
+      cb(null, __basedir + "/app/upload");
+    },
+    filename: (req, file, cb) => {
+      console.log(file.originalname);
+      cb(null, file.originalname);
+    },
   });
 
-  menuPush
-    .save()
-    .then(() => res.json("Menu successfully added"))
+  let uploadFile = multer({
+    storage: storage,
+    limits: {
+      fileSize: maxSize
+    },
+  }).single("file");
+
+  let uploadFileMiddleware = util.promisify(uploadFile);
+
+  try {
+    await uploadFileMiddleware(req, res);
+
+    if (req.file == undefined) {
+      return res.status(400).send({ message: "Please upload a file!" });
+    }
+    const nomMenu = req.body.nomMenu;
+    const imagePath = req.file.originalname;
+
+    const menuPush = new Menu({
+      nomMenu,
+      imagePath,
+
+    });
+
+    menuPush
+      .save()
+      .then(() => res.json("Menu successfully added"))
+      .catch((err) => res.status(400).json("Error :" + err));
+
+
+
+  } catch (err) {
+    console.log(err);
+
+    if (err.code == "LIMIT_FILE_SIZE") {
+      return res.status(500).send({
+        message: "File size cannot be larger than 2MB!",
+      });
+    }
+
+    res.status(500).send({
+      message: `Could not upload the file: ${req.file.originalname}. ${err}`,
+    });
+  }
+
+});
+
+router.route("/update/:id").put(async (req, res) => {
+
+  let storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+      // @ts-ignore
+      cb(null, __basedir + "/app/upload");
+    },
+    filename: (req, file, cb) => {
+      console.log(file.originalname);
+      cb(null, file.originalname);
+    },
+  });
+
+  let uploadFile = multer({
+    storage: storage,
+    limits: {
+      fileSize: maxSize
+    },
+  }).single("file");
+
+  let uploadFileMiddleware = util.promisify(uploadFile);
+
+  try {
+    await uploadFileMiddleware(req, res);
+
+    if (req.file == undefined) {
+      return res.status(400).send({ message: "Please upload a file!" });
+    }
+    const nomSousMenu = req.body.nomSousMenu;
+    const imagePath = req.file.originalname;
+    const idMenu = req.body.idMenu;
+    Menu.updateOne({ _id: req.params.id }, { nomSousMenu: nomSousMenu, imagePath: imagePath, idMenu: idMenu }).then(() => res.status(201).json("Sous menu successfully update"))
+      .catch((err) => res.status(400).json("Error :" + err));
+
+  } catch (err) {
+    console.log(err);
+
+    if (err.code == "LIMIT_FILE_SIZE") {
+      return res.status(500).send({
+        message: "File size cannot be larger than 2MB!",
+      });
+    }
+
+    res.status(500).send({
+      message: `Could not upload the file: ${req.file.originalname}. ${err}`,
+    });
+  }
+
+});
+router.route("/delete/:id").delete((req, res) => {
+  Menu.findByIdAndDelete(req.params.id).then((menu) => res.json(menu))
     .catch((err) => res.status(400).json("Error :" + err));
 });
 

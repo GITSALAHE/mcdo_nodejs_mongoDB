@@ -5,6 +5,11 @@
           box-sizing: border-box;
 }
 
+body {
+  min-height: 100vh;
+  position: relative;
+}
+
 body header .menu {
   height: 60px;
   width: 100%;
@@ -27,7 +32,7 @@ body header .cover {
   background-image: url("../Images/Products.png");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
 }
 
 body header .title {
@@ -69,19 +74,57 @@ body .products {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  padding-bottom: 50px;
+}
+
+body .products #payment .modal-content {
+  height: 350px;
+}
+
+body .products #payment .infos {
+  display: block;
+}
+
+body .products #payment .infos form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .products #payment .infos input {
+  width: 100%;
+  margin-top: 1%;
+}
+
+body .products #payment .infos .submit {
+  background-color: #ECC020;
+  width: 50%;
 }
 
 body .products .modal-content {
   background-color: #404040;
 }
 
+body .products .modal-content h5 {
+  color: white;
+}
+
 body .products .product {
-  width: 33%;
+  width: 50%;
   text-align: center;
 }
 
 body .products .product img {
   width: 120px;
+  height: 115px;
 }
 
 body .products .product a {
@@ -122,19 +165,14 @@ body .products .payment {
 }
 
 body .choices {
-  width: 50%;
+  width: 80%;
   margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   height: 120px;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-body .choices div {
-  margin-top: 40px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 body .choices a {
@@ -145,6 +183,12 @@ body .choices a {
 body .choices img {
   height: 50px;
   width: 50px;
+}
+
+body footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0%;
 }
 
 body footer .menu {
@@ -163,5 +207,18 @@ body footer .menu img {
           transform: translate(-50%, -50%);
   width: 60px;
   height: 60px;
+}
+
+@media (max-width: 768px) {
+  body .products {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  body .products .product {
+    width: auto;
+  }
 }
 /*# sourceMappingURL=Products.css.map */

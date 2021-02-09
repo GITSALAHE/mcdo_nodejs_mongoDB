@@ -7,6 +7,8 @@ $bgColor : #404040;
 }
 
 body{
+    min-height: 100vh;
+    position: relative;
     header{
         .menu{
             height: 60px;
@@ -27,7 +29,7 @@ body{
             background-image: url('../Images/Products.png');
             background-position: center;
             background-repeat: no-repeat;
-            background-size: 100%;
+            background-size: cover;
         }
         .title{
             background-color: #D3D3D3;
@@ -49,6 +51,8 @@ body{
         
     }
 
+
+
     .products{
         height: auto;
         width: 40%;
@@ -58,14 +62,43 @@ body{
         justify-content: space-between;
         flex-wrap: wrap;
         justify-content: flex-start;
+        padding-bottom: 50px;
 
+        #payment{
+            .modal-content{
+                height: 350px;
+            }
+            
+            .infos{
+                display: block;
+                form{
+                    width: 100%;
+                    display: flex;
+                flex-direction: column;
+                align-items: center;
+                }
+                input{
+                    width: 100%;
+                    margin-top: 1%;
+                }
+                
+                .submit{
+                    background-color: $color;
+                    width: 50%;
+                }
+            }
+        }
         .modal-content{
             background-color: $bgColor;
+            h5{
+                color: white;
+            }
         }
         
         .product{   
             img{
                 width: 120px;
+                height: 115px;
             }
             a{
                 text-decoration: none;
@@ -85,7 +118,7 @@ body{
                 height:20px;
                 width: 40px;
             }
-            width: 33%;
+            width: 50%;
             text-align: center;
             
         }
@@ -109,13 +142,13 @@ body{
         }
     }
     .choices{
-        width: 50%;
+        width: 80%;
         margin: auto;
         display: flex;
         height: 120px;
-        justify-content: space-between;
+        justify-content: space-around;
         div{
-            margin-top: 40px;
+            
         }
         a {
             font-size: 20px;
@@ -127,6 +160,9 @@ body{
         }
     }
     footer{
+        width: 100%;
+        position: absolute;
+        bottom: 0%;
         .menu{
             margin-top: 10px;
             position: relative;
@@ -143,4 +179,17 @@ body{
             }
         }
     }
+}
+
+@media(max-width:768px){
+   body{
+    .products{
+        flex-wrap: wrap;
+        justify-content: center;
+        .product{
+            width: auto;
+        }
+    }
+   }
+    
 }

@@ -22,18 +22,6 @@ const SousMenu = new Schema(
             required: true,
             trim: true,
         },
-        prix:{
-            type:String,
-            required: true,
-            trim:true,
-            minlength:1,
-          },
-          pointFid:{
-            type:String,
-            required: true,
-            trim:true,
-            minlength:3,
-          }
     },
     {
         versionKey: false

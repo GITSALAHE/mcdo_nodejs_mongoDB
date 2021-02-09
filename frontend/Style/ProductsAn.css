@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  
+  body {
+    min-height: 100vh;
+    position: relative;
+  }
+  
+  body header .menu {
+    height: 60px;
+    width: 100%;
+    background-color: #404040;
+  }
+  
+  body header .menu img {
+    position: absolute;
+    left: 50%;
+    top: 5%;
+    width: 80px;
+    height: 80px;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  
+  body header .cover {
+    width: 100%;
+    height: 300px;
+    background-image: url("../Images/ProductsAn.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  body header .title {
+    background-color: #D3D3D3;
+    height: 30px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: -3px;
+  }
+  
+  body header .title h2 {
+    padding-top: 0px;
+    font-size: 19px;
+    text-align: center;
+    color: #707070;
+    text-decoration: underline;
+    -webkit-text-decoration-color: red;
+            text-decoration-color: red;
+    text-underline-position: under;
+  }
+  
+  body .products {
+    height: auto;
+    width: 40%;
+    margin: auto;
+    margin-top: 2%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    padding-bottom: 50px;
+  }
+  
+  body .products #payment .modal-content {
+    height: 350px;
+  }
+  
+  body .products #payment .infos {
+    display: block;
+  }
+  
+  body .products #payment .infos form {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  
+  body .products #payment .infos input {
+    width: 100%;
+    margin-top: 1%;
+  }
+  
+  body .products #payment .infos .submit {
+    background-color: #ECC020;
+    width: 50%;
+  }
+  
+  body .products .modal-content {
+    background-color: #404040;
+  }
+  
+  body .products .modal-content h5 {
+    color: white;
+  }
+  
+  body .products .product {
+    width: 50%;
+    text-align: center;
+  }
+  
+  body .products .product img {
+    width: 120px;
+    height: 115px;
+  }
+  
+  body .products .product a {
+    text-decoration: none;
+  }
+  
+  body .products .product button {
+    border-style: none;
+    cursor: pointer;
+    background-color: transparent;
+    color: black;
+  }
+  
+  body .products .product button:active {
+    border: none;
+  }
+  
+  body .products .product .number {
+    height: 20px;
+    width: 40px;
+  }
+  
+  body .products .modal-content .products {
+    width: 80%;
+  }
+  
+  body .products .modal-content .products .product p {
+    color: white;
+  }
+  
+  body .products .supp {
+    max-width: 50%;
+  }
+  
+  body .products .payment {
+    max-width: 60%;
+    max-height: 500px;
+  }
+  
+  body .choices {
+    width: 80%;
+    margin: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 120px;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  
+  body .choices a {
+    font-size: 20px;
+    color: white;
+  }
+  
+  body .choices img {
+    height: 50px;
+    width: 50px;
+  }
+  
+  body footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0%;
+  }
+  
+  body footer .menu {
+    margin-top: 10px;
+    position: relative;
+    height: 60px;
+    width: 100%;
+    background-color: #404040;
+  }
+  
+  body footer .menu img {
+    position: absolute;
+    bottom: -50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+  }
+  
+  @media (max-width: 768px) {
+    body .products {
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+    }
+    body .products .product {
+      width: auto;
+    }
+  }
+  /*# sourceMappingURL=Products.css.map */
