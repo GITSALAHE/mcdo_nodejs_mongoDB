@@ -37,7 +37,9 @@ var fileToUpload  = document.querySelector('input[type=file]').files[0];
   fd.append('nomMenu', nomMenu)
   axios.post('http://localhost:8080/menu/add', fd, config)
   .then((response)=>{
+      document.getElementById('hideModel').click();
       console.log("Image posted successfully: ", response);
+      loadDataMenu();
   })
 })
 //end add menu
@@ -60,7 +62,9 @@ btnUpdate.addEventListener('click', () => {
     fd.append('nomMenu', nomMenu)
     axios.put(`http://localhost:8080/menu/update/${idModal}`, fd, config)
     .then((response)=>{
+        document.getElementById('hideModelEdit').click();
         console.log("Image posted successfully: ", response);
+        loadDataMenu();
     })
 })
 
@@ -74,7 +78,9 @@ btnDelete.addEventListener('click', () => {
 
     axios.delete(`http://localhost:8080/menu/delete/${idModal}`)
     .then((response)=>{
-        console.log("deleted", response);
+        document.getElementById('hideDelete').click();
+        console.log("Image posted successfully: ", response);
+        loadDataMenu();
     })
 })
 //end delete menu 

@@ -37,7 +37,8 @@ window.addEventListener('load', loadData());
 var btnAdd = document.getElementById('addTable');
 btnAdd.addEventListener('click', ()=>{
     axios.post('http://localhost:8080/table/add').then((res) => {
-       window.location.reload()
+       loadData();
+       console.log(res);
     })
 })
 
@@ -52,7 +53,9 @@ btnUpdate.addEventListener('click', () => {
         reserve : valid
     }
     axios.put(`http://localhost:8080/table/update/${id}`, data).then((res) => {
+        document.getElementById('hideModelEdit').click();
         console.log(res);
+        loadData();
     })
 })
 
@@ -63,6 +66,8 @@ var btnDelete = document.getElementById('deleteId');
 btnDelete.addEventListener('click', () => {
     var id  = document.getElementById('idTableDelete').value;
     axios.delete(`http://localhost:8080/table/delete/${id}`).then((res) => {
+        document.getElementById('hideDelete').click();
         console.log(res);
+        loadData();
     }) 
 })

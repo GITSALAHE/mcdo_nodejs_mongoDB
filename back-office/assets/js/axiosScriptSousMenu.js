@@ -50,7 +50,9 @@ btnAdd.addEventListener('click', () => {
     fd.append('nomSousMenu', nomSousMenu)
     fd.append('idMenu', idMenu)
     axios.post('http://localhost:8080/sousmenu/add', fd, config).then((response) => {
-        console.log(response)
+        document.getElementById('hideModel').click();
+        console.log(response);
+        loadMenus();
     })
 });
 
@@ -75,7 +77,9 @@ btnUpdate.addEventListener('click', ()=> {
     fd.append('nomSousMenu', nomSousMenu)
     fd.append('idMenu', idMenu)
     axios.put(`http://localhost:8080/sousmenu/update/${id}`, fd, config).then((res) => {
+        document.getElementById('hideModelEdit').click();
         console.log(res)
+        loadMenus();
     })
 })
 //end update data sous menu 
@@ -88,6 +92,8 @@ btnDelete.addEventListener('click', () => {
     let id = document.getElementById('idMenuDelete').value;
 
     axios.delete(`http://localhost:8080/sousmenu/delete/${id}`).then((res) => {
+        document.getElementById('hideDelete').click();
         console.log(res);
+        loadMenus();
     })
 })

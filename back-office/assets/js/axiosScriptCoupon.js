@@ -41,7 +41,10 @@ btnAdd.addEventListener('click', () => {
         percent: percent
     }
     axios.post('http://localhost:8080/coupon/add', data).then((res) => {
+        document.getElementById('hideModel').click();
         console.log(res);
+        loadData();
+       
     })
 })
 
@@ -58,7 +61,9 @@ btnUpdate.addEventListener('click', () => {
         percent: percent
     }
     axios.put(`http://localhost:8080/coupon/update/${id}`, data).then((res) => {
+        document.getElementById('hideModelEdit').click();
         console.log(res);
+        loadData();
     })
 })
 //end update coupon
@@ -69,7 +74,9 @@ var btnDelete = document.getElementById('deleteId');
 btnDelete.addEventListener('click', () => {
     var id = document.getElementById('idCouponDelete').value;
     axios.delete(`http://localhost:8080/coupon/delete/${id}`).then((res) => {
+        document.getElementById('hideDelete').click();
         console.log(res);
+        loadData();
     })
 })
 //end delete coupon 

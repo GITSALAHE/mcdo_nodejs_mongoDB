@@ -70,10 +70,6 @@ function translator() {
   var urlParam = new URLSearchParams(urlString);
   var language = urlParam.get('lang');
 
-  if (language === '' || language == undefined || language == null) {
-    window.location.href = 'products.html?lang=fr';
-  }
-
   if (language === "ar") {
     document.title = obj.ar.titleHtml;
     document.getElementById('css').setAttribute('href', obj.ar.cssPath);
@@ -97,9 +93,7 @@ function translator() {
     document.getElementById('btnCash').value = obj.ar.purchaseButton;
     document.getElementById('couponTrans').innerHTML = obj.ar.coupon;
     document.getElementById('coupon').placeholder = obj.ar.coupon;
-  }
-
-  if (language === "fr") {
+  } else if (language === "fr") {
     document.title = obj.fr.titleHtml;
     document.getElementById('css').setAttribute('href', obj.fr.cssPath);
     document.getElementById('menuTrans').innerHTML = obj.fr.homePageName;
@@ -122,9 +116,7 @@ function translator() {
     document.getElementById('btnCash').value = obj.fr.purchaseButton;
     document.getElementById('couponTrans').innerHTML = obj.fr.coupon;
     document.getElementById('coupon').placeholder = obj.fr.coupon;
-  }
-
-  if (language === "an") {
+  } else if (language === "an") {
     document.title = obj.an.titleHtml;
     document.getElementById('css').setAttribute('href', obj.an.cssPath);
     document.getElementById('menuTrans').innerHTML = obj.an.homePageName;
@@ -147,6 +139,8 @@ function translator() {
     document.getElementById('btnCash').value = obj.an.purchaseButton;
     document.getElementById('couponTrans').innerHTML = obj.an.coupon;
     document.getElementById('coupon').placeholder = obj.an.coupon;
+  } else {
+    window.location.href = 'products.html?lang=fr';
   }
 }
 

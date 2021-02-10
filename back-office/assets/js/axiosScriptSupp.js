@@ -45,7 +45,10 @@ btnAdd.addEventListener('click', () => {
     fd.append('nomSupp', nomProduct)
     fd.append('prix', prix)
     axios.post('http://localhost:8080/supp/add', fd, config).then((res)=>{
+        document.getElementById('hideModel').click();
         console.log(res);
+        loadData();
+  
     })
 })
 //end add data supp
@@ -69,7 +72,9 @@ btnUpdate.addEventListener('click', () =>  {
     fd.append('nomSupp', nomProduct)
     fd.append('prix', prix)
     axios.put(`http://localhost:8080/supp/update/${id}`, fd, config).then((res)=>{
+        document.getElementById('hideModelEdit').click();
         console.log(res);
+        loadData();
     })
 })
 //end update supp
@@ -80,6 +85,8 @@ var btnDelete = document.getElementById('deleteId');
 btnDelete.addEventListener('click', () => {
     var id = document.getElementById('idProductDelete').value;
     axios.delete(`http://localhost:8080/supp/delete/${id}`).then((res) => {
+        document.getElementById('hideDelete').click();
         console.log(res);
+        loadData();
     })
 })

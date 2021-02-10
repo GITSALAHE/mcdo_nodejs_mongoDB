@@ -126,7 +126,11 @@ btnAdd.addEventListener('click', () => {
     fd.append('ingredient', ingredient)
 
     axios.post("http://localhost:8080/product/add", fd, config).then((res) => {
+        document.getElementById('hideModel').click();
         console.log(res);
+        loadData();
+        loadSousMenu();
+        loadSousMenuUpdate();
     })
 }) 
 
@@ -161,7 +165,11 @@ btnUpdate.addEventListener('click', () => {
     fd.append('ingredient', ingredient)
 
     axios.put(`http://localhost:8080/product/update/${id}`, fd, config).then((res) => {
+        document.getElementById('hideModelEdit').click();
         console.log(res);
+        loadData();
+        loadSousMenu();
+        loadSousMenuUpdate();
     })
 })
 
@@ -174,6 +182,10 @@ var btnDelete = document.getElementById('deleteId');
 btnDelete.addEventListener('click', () => {
     var id = document.getElementById('idProductDelete').value;
     axios.delete(`http://localhost:8080/product/delete/${id}`).then((success) => {
+        document.getElementById('hideDelete').click();
         console.log(success);
+        loadData();
+        loadSousMenu();
+        loadSousMenuUpdate();
     })
 })
